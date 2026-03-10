@@ -1,11 +1,15 @@
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import About from '../components/About';
+import Testimonials from '../components/Testimonials';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white bg-opacity-90">
+    <main className="min-h-screen">
       <Navbar />
       <Hero />
-    </div>
+      <About />
+      <Testimonials />
+    </main>
   );
 }
