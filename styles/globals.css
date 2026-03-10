@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* dark background default */
+html,
+body {
+  background-color: #000; /* solid black page background */
+}
+
+html.dark {
+  background-color: #111827;
+}
+
+.navbar-striped {
+  background-color: rgba(0, 0, 0, 0.72);
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.06) 0,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 2px,
+      transparent 12px
+    );
+}
+
+.brand-b2-simple {
+  color: #35c2ff;
+  font-size: clamp(1.55rem, 3.2vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-shadow:
+    0 0 8px rgba(53, 194, 255, 0.8),
+    0 0 16px rgba(53, 194, 255, 0.46);
+}
