@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Testimonials() {
   const testimonials = [
@@ -38,7 +39,13 @@ export default function Testimonials() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45, ease: 'easeOut' }}
+        >
           <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full 
             border border-blue-500/40 
             bg-blue-500/10 
@@ -52,9 +59,15 @@ export default function Testimonials() {
           <h2 className="text-4xl md:text-5xl font-black text-white">
             Da estratégia à <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">execução</span>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="relative max-w-4xl mx-auto group">
+        <motion.div
+          className="relative max-w-4xl mx-auto group"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.08 }}
+        >
           {/* Carousel Wrapper */}
           <div className="overflow-hidden relative rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur-md shadow-2xl">
             <div 
@@ -122,11 +135,10 @@ export default function Testimonials() {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="flex justify-center mt-9">
         <a href="#contact" className="w-full inline-flex sm:w-auto px-20 py-6 rounded-full bg-blue-600 
-        animate-pulse
         hover:bg-blue-500 
         text-white font-bold tracking-wide 
         transition-all duration-300 

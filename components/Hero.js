@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export default function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen pt-20 overflow-hidden bg-slate-950 px-6">
@@ -5,7 +7,13 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-900/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none"></div>
       
-      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center gap-8 animate-fade-in-up">
+      <motion.div
+        className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center gap-8"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.45, ease: 'easeOut' }}
+      >
         <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full 
             border border-blue-500/40 
             bg-blue-500/10 
@@ -19,7 +27,8 @@ export default function Hero() {
         
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white !leading-tight drop-shadow-lg">
           Estratégia para a <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 drop-shadow-[0_0_20px_rgba(59,130,246,0.4)]">Indústria</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 
+          to-cyan-300 drop-shadow-[0_0_20px_rgba(59,130,246,0.4)]">Empresas</span>
         </h1>
         
         <p className="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed font-medium mt-2">
@@ -34,7 +43,7 @@ export default function Hero() {
             Conhecer Escopo
           </button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

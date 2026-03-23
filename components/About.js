@@ -1,4 +1,6 @@
 
+import { motion } from 'framer-motion';
+
 export default function About() {
   const pillars = [
     {
@@ -37,13 +39,21 @@ export default function About() {
 
       <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
-        <div className="flex flex-col gap-6 animate-fade-in-up">
+        <motion.div
+          className="flex flex-col gap-6"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45, ease: 'easeOut' }}
+        >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-xs font-bold uppercase tracking-widest w-fit mb-2">
-            Nossa Inteligência B2B
+            Nossa Inteligência B2
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-white leading-tight">
-            Elevamos o <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Padrão</span> no<br className="hidden lg:block"/> Marketing Industrial
+          <h2 className="text-4xl md:text-5xl lg:text-7xl 
+          font-black tracking-tight text-white leading-tight">
+            Elevamos o <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400
+             to-cyan-300">Padrão</span> no<br className="hidden lg:block"/> Marketing Industrial
           </h2>
           
           <p className="text-xl text-slate-300 leading-relaxed font-medium mt-4">
@@ -64,24 +74,30 @@ export default function About() {
                 <p className="text-xs uppercase tracking-widest text-slate-400 mt-2 font-bold">Profissionais</p>
              </div>
           </div>
-          <div className="flex justify-center mt-9">
-            <a href="#contact" className="w-full inline-flex sm:w-auto px-20 py-6 rounded-full bg-blue-800 
-            animate-pulse
-            hover:bg-blue-500 
-            text-white font-bold tracking-wide 
-            transition-all duration-300 
-            shadow-[0_0_20px_rgba(37,99,235,0.4)] 
-            hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] 
-            hover:-translate-y-0.5
-            hover:scale-105
-            text-lg">
-              Faça parte das nossas excelentes métricas
+          <div className="flex justify-center mt-9 md:justify-start">
+            <a href="#contact" className="w-full inline-flex sm:w-auto px-20 py-6 rounded-full bg-blue-600 
+              hover:bg-blue-500 
+              text-white font-bold tracking-wide 
+              transition-all duration-300 
+              shadow-[0_0_20px_rgba(37,99,235,0.4)] 
+              hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] 
+              hover:-translate-y-0.5
+              hover:scale-105
+              text-lg
+              animate-bounce">
+              Pronto para acelerar suas vendas?
             </a>
-          </div>
         </div>
+        </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mt-12 lg:mt-0">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mt-12 lg:mt-0"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.08 }}
+        >
           {pillars.map((pillar, index) => (
             <div 
               key={index}
@@ -98,7 +114,7 @@ export default function About() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

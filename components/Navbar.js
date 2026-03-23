@@ -1,20 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <nav className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-slate-950/80 py-4 backdrop-blur-md transition-all duration-300">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 lg:px-8">
         <a href="/" className="flex items-center gap-3 group">
           <span className="text-4xl font-black tracking-tighter text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:drop-shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all duration-300">
@@ -32,8 +23,8 @@ export default function Navbar() {
           <Link href="/#contato" className="px-5 py-2.5 rounded border border-blue-500/30 bg-blue-500/10 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.15)] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
             Falar com Especialista
           </Link>
-          <Link href="/Meeting" className="px-5 py-2.5 rounded border border-blue-500/30 bg-blue-500/10 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.15)] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-            Agendar Reunião
+          <Link href="/login" className="px-5 py-2.5 rounded border border-blue-500/30 bg-blue-500/10 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.15)] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+            login
           </Link>
         </div>
         <button className="md:hidden p-2 text-slate-300 hover:text-white transition-colors focus:outline-none" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
@@ -58,8 +49,8 @@ export default function Navbar() {
           <Link href="/#contato" onClick={() => setMenuOpen(false)} className="mt-2 w-full text-center px-5 py-3 rounded border border-blue-500/30 bg-blue-500/10 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
             Falar com Especialista
           </Link>
-          <Link href="/Meeting" onClick={() => setMenuOpen(false)} className="mt-2 w-full text-center px-5 py-3 rounded border border-blue-500/30 bg-blue-500/10 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
-            Agendar Reunião
+          <Link href="/login" onClick={() => setMenuOpen(false)} className="mt-2 w-full text-center px-5 py-3 rounded border border-blue-500/30 bg-blue-500/10 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+            login
           </Link>
         </div>
       </div>
