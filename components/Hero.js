@@ -39,9 +39,15 @@ export default function Hero() {
           <button className="w-full sm:w-auto px-8 py-4 rounded bg-blue-600 hover:bg-blue-500 text-white font-bold tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] hover:-translate-y-0.5">
             Acelerar Vendas
           </button>
-          <button className="w-full sm:w-auto px-8 py-4 rounded border border-slate-700 bg-slate-900/50 text-slate-300 font-bold tracking-wide hover:bg-slate-800 hover:text-white transition-all duration-300 backdrop-blur-sm hover:-translate-y-0.5">
-            Conhecer Escopo
-          </button>
+          <a href= "#cases" className="w-full 
+          sm:w-auto px-8 py-4 rounded 
+          border border-slate-700 
+          bg-slate-900/50 text-slate-300 
+          font-bold tracking-wide 
+          hover:bg-slate-800 hover:text-white transition-all d
+          uration-300 backdrop-blur-sm hover:-translate-y-0.5">
+            Cases de sucesso
+          </a>
         </div>
       </motion.div>
     </section>

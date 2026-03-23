@@ -6,19 +6,19 @@ export default function Testimonials() {
     {
       name: "Carlos Eduardo",
       role: "Diretor Comercial - Metalúrgica Apex",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+      image: "",
       text: "A estratégia da B2 transformou nosso setor de vendas. Saímos de leads desqualificados para reuniões semanais com diretores de grandes indústrias. O ROI da campanha paga se pagou no primeiro mês."
     },
     {
       name: "Fernanda Silveira",
       role: "CEO - TechMaq Equipamentos",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+      image: "",
       text: "O nível de sofisticação das landing pages e o entendimento do nosso ciclo de vendas longo foi o que mais me impressionou. Eles realmente entendem como funciona a cabeça da indústria."
     },
     {
       name: "Roberto Almeida",
       role: "Gerente de Engenharia - Polímeros BR",
-      image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+      image: "",
       text: "Trabalhar com a B2 Marketing mudou o nosso posicionamento no digital. Nosso maquinário altamente técnico agora é apresentado de forma clara, cirúrgica e altamente persuasiva."
     }
   ];
@@ -34,7 +34,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="cases" className="relative py-24 bg-slate-950 overflow-hidden px-6">
+    <section id="cases" className="relative py-20 bg-slate-950 overflow-hidden px-6">
       {/* Background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -80,7 +80,9 @@ export default function Testimonials() {
                     <img 
                       src={t.image} 
                       alt={t.name} 
-                      className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-2 border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.2)] flex-shrink-0"
+                      className="w-24 h-24 md:w-32 md:h-32 
+                      rounded-full object-cover border-2 
+                      border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.2)] flex-shrink-0"
                     />
                     <div className="flex-1 relative">
                        {/* Quote mark icon */}

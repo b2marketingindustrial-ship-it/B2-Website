@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Navbar from '../components/Navbar';
 
 export default function Login() {
   const router = useRouter();
@@ -41,6 +42,8 @@ export default function Login() {
   };
 
   return (
+    <>
+    <Navbar />
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-4 py-12 text-slate-100">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.2),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(14,165,233,0.2),transparent_35%)]" />
 
@@ -113,5 +116,6 @@ export default function Login() {
         <p className="mt-5 text-xs text-slate-400">Teste rapido: teste@teste.com / 123456</p>
       </section>
     </main>
+    </>
   );
 }
